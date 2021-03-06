@@ -6,10 +6,9 @@ def insertion_sort(lst):
         j = i - 1
 
         while j >= 0 and anchor < lst[j]:
-            print(j+1, j)
+
             lst[j+1] = lst[j]
             j = j - 1
-            print(j)
 
         lst[j+1] = anchor
 
