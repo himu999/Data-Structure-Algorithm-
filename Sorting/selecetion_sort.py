@@ -31,4 +31,3 @@ if __name__ == "__main__":
         {'First Name': 'Aahana', 'Last Name': 'Arora'}
     ]
     print(merge_sort(a))
-
