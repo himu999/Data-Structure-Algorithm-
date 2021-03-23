@@ -1,36 +1,41 @@
 class Node:
-
-    def __int__(self, value):
-        self.next = None
-        self.prev = None
-        self.value = value
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
 
 
-class DoubleLinkedList:
+class LinkedList:
     def __init__(self):
         self.head = None
-        self.tail = None
-        self.size = 0
 
-    def add(self, val):
-        node = Node(val)
-        if self.tail is None:
-            self.head = node
-            self.tail = node
-            self.size += 1
-        else:
-            self.head.next = node
-            node.prev = self.head
-            self.tail = node
-            self.size += 1
+    def insert_at_begining(self, data):
+        node = Node(data, self.head)
+        self.head = node
+        print('Before node', node)
+
+    def print(self):
+        if self.head is None:
+            print("Linked list is empty")
+            return
+
+        itr = self.head
+        llstr = ''
+
+        while itr:
+            llstr += str(itr.data) + '-->'
+            itr = itr.next
+
+        print(llstr)
 
 
-my = DoubleLinkedList()
+if __name__ == "__main__":
+    ll = LinkedList()
 
-my.add(1)
-my.add(5)
-my.add(2)
-
-print(my)
-
+    ll.insert_at_begining(98)
+    ll.insert_at_begining(98)
+    ll.insert_at_begining(98)
+    ll.insert_at_begining(98)
+    ll.insert_at_begining(98)
+    ll.insert_at_begining(89)
+    ll.print()
 
