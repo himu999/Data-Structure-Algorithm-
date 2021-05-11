@@ -2,9 +2,12 @@ stack = []
 
 
 def push():
-    element = input('Enter the element: ')
-    stack.append(element)
-    print(stack)
+    if len(stack) == n:
+        print('Stack is full!')
+    else:
+        element = input('Enter the element: ')
+        stack.append(element)
+        print(stack)
 
 
 def pop():
@@ -15,6 +18,8 @@ def pop():
         print('Remove element', e)
         print(stack)
 
+
+n = int(input('Limit of stack: '))
 
 while True:
     print("Select the operation 1.push 2.pop 3.quit")
